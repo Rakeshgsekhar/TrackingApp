@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -18,6 +19,7 @@ public class Launcher extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher);
+
 
         LocationManager locationManager = (LocationManager)getSystemService(LOCATION_SERVICE);
         if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
@@ -48,9 +50,19 @@ public class Launcher extends AppCompatActivity {
         if(requestCode == PERMISSION_REQUEST && grantResults.length==2
                 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
 
-            Intent intent = new Intent(Launcher.this,MainActivity.class);
+           /* Intent intent = new Intent(Launcher.this,MainActivity.class);
             startActivity(intent);
-            finish();
+            finish();*/
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    Intent intent = new Intent(Launcher.this,MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            },5000);
 
         }else{
 
