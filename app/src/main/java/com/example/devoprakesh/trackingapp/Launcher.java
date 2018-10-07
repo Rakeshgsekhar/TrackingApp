@@ -22,7 +22,7 @@ public class Launcher extends AppCompatActivity {
 
 
         LocationManager locationManager = (LocationManager)getSystemService(LOCATION_SERVICE);
-        if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+        if(!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
             Toast.makeText(Launcher.this,"Please enable Location Service",Toast.LENGTH_LONG).show();
             finish();
         }
