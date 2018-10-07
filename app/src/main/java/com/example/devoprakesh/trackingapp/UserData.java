@@ -3,9 +3,9 @@ package com.example.devoprakesh.trackingapp;
 public class UserData {
 
     String name;
-    Long phonenumber;
+    String phonenumber;
 
-    public UserData(String name, Long phonenumber) {
+    public UserData(String name, String phonenumber) {
         this.name = name;
         this.phonenumber = phonenumber;
     }
@@ -19,11 +19,11 @@ public class UserData {
         this.name = name;
     }
 
-    public Long getPhonenumber() {
+    public String getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(Long phonenumber) {
+    public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
 }

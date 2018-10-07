@@ -28,7 +28,8 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Home"></activity>
     </application>
 
 </manifest>
